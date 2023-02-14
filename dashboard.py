@@ -2,7 +2,6 @@ import dash
 import dash_html_components as html
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 
 df = pd.read_csv("data/amsterdam.csv")
 
@@ -13,25 +12,6 @@ app = dash.Dash(__name__)
 app.layout = html.Div()
 
 property_type = list(df["property_type"].unique())
-
-
-# def price_area():
-#     # Function for creating line chart showing Google stock prices over time
-#     fig = go.Figure(
-#         [
-#             go.Scatter(
-#                 x=df["area"],
-#                 y=df["price"],
-#                 line=dict(color="firebrick", width=4),
-#                 name="Area Price",
-#                 mode="markers",
-#             )
-#         ]
-#     )
-#     fig.update_layout(
-#         title="Prices over area", xaxis_title="area", yaxis_title="x 1000 Euro"
-#     )
-#     return fig
 
 
 @app.callback(
